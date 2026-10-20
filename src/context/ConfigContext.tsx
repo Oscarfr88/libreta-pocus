@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useReducer, useRef, useState, type ReactNode } from 'react';
 import type { Bloque, Configuracion, Membrete, Textos } from '../types';
 import { CLAVE_CONFIG } from '../config';
-import { configuracionInicial } from '../data/configuracionInicial';
+import { completarCursosPredefinidos, configuracionInicial } from '../data/configuracionInicial';
 import { guardarJSON, leerJSON } from '../utils/almacenamiento';
 import { aplicarColorPrimario } from '../utils/color';
 import { depurarInstructores } from '../utils/instructores';
@@ -22,7 +22,7 @@ export type AccionConfig =
 function reducer(estado: Configuracion, a: AccionConfig): Configuracion {
   switch (a.tipo) {
     case 'reemplazar':
-      return a.config;
+      return completarCursosPredefinidos(a.config);
     case 'membrete':
       return { ...estado, membrete: { ...estado.membrete, ...a.cambios } };
     case 'textos':
@@ -48,7 +48,7 @@ function reducer(estado: Configuracion, a: AccionConfig): Configuracion {
 
 function cargarInicial(): Configuracion {
   const base = configuracionInicial();
-  return sanearConfiguracion(leerJSON(CLAVE_CONFIG), base) ?? base;
+  return completarCursosPredefinidos(sanearConfiguracion(leerJSON(CLAVE_CONFIG), base) ?? base);
 }
 
 interface Valor {

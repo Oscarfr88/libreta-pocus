@@ -1,0 +1,98 @@
+{
+  "bloques": [
+    {
+      "nombre": "FÍSICA Y KNOBOLOGÍA",
+      "competencias": [
+        "Cuidados del equipo",
+        "Knobología, transductores y comandos básicos",
+        "Uso del modo M",
+        "Uso de Doppler (color, pulsado, continuo y tisular)"
+      ]
+    },
+    {
+      "nombre": "ULTRASONIDO PULMONAR",
+      "competencias": [
+        "Exploración pulmonar con ultrasonido",
+        "Protocolo BLUE",
+        "Identificación de punto pulmonar",
+        "Cuantificación ecográfica de derrame pleural"
+      ]
+    },
+    {
+      "nombre": "ABDOMEN / FAST",
+      "competencias": [
+        "Protocolo FAST / FASTE",
+        "Evaluación de hígado",
+        "Evaluación de vesícula biliar",
+        "Evaluación de bazo",
+        "Evaluación de aorta abdominal con medición"
+      ]
+    },
+    {
+      "nombre": "RENOVESICOPROSTÁTICO (RVP)",
+      "competencias": [
+        "Exploración ecográfica renal",
+        "Evaluación de corteza y parénquima renal",
+        "Evaluación de ecogenicidad cortical",
+        "Evaluación de vejiga (paredes y volumen)",
+        "Verificación de posicionamiento de sonda vesical"
+      ]
+    },
+    {
+      "nombre": "ACCESOS VASCULARES",
+      "competencias": [
+        "Práctica de accesos vasculares ecoguiados en simuladores"
+      ]
+    },
+    {
+      "nombre": "VENTANAS CARDÍACAS",
+      "competencias": [
+        "Ventana paraesternal eje largo",
+        "Ventana paraesternal eje corto",
+        "Ventana apical 4 cámaras",
+        "Ventana apical 2 cámaras",
+        "Ventana subxifoidea"
+      ]
+    },
+    {
+      "nombre": "FUNCIÓN SISTÓLICA",
+      "competencias": [
+        "Valoración visual de función sistólica",
+        "Medición distancia E-septum",
+        "Cambio fraccional de área",
+        "MAPSE"
+      ]
+    },
+    {
+      "nombre": "FUNCIÓN DIASTÓLICA",
+      "competencias": [
+        "Relación E/e´",
+        "Cavidades derechas"
+      ]
+    },
+    {
+      "nombre": "VENA CAVA INFERIOR",
+      "competencias": [
+        "Medición de VCI",
+        "Evaluación de colapsabilidad / distensibilidad",
+        "Monitoreo hemodinámico"
+      ]
+    },
+    {
+      "nombre": "TVP",
+      "competencias": [
+        "Evaluación sistema femoral",
+        "Evaluación vena poplítea"
+      ]
+    },
+    {
+      "nombre": "NEUROSONOLOGÍA",
+      "competencias": [
+        "Doppler ACM (VPS / VM / VD)",
+        "Índice de Lindegaard",
+        "Doppler carótida interna",
+        "DVNO"
+      ]
+    }
+  ]
+}

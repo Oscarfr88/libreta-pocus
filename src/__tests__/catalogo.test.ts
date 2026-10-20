@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { configuracionInicial, textoValidacion } from '../data/configuracionInicial';
+import { completarCursosPredefinidos, configuracionInicial, textoValidacion } from '../data/configuracionInicial';
 import { contarCompetencias } from '../utils/catalogo';
 
 // Listado tal como figura en el pedido original. Única adaptación acordada:
@@ -69,9 +69,8 @@ describe('catálogo precargado de POCUS II', () => {
     }
   });
 
-  it('POCUS I y POCUS III existen sin catálogo, y no hay logo por defecto', () => {
+  it('POCUS III existe sin catálogo, y no hay logo por defecto', () => {
     expect(config.cursos.map((c) => c.nombre)).toEqual(['POCUS I', 'POCUS II', 'POCUS III']);
-    expect(config.cursos[0].bloques).toEqual([]);
     expect(config.cursos[2].bloques).toEqual([]);
     expect(config.membrete.logo).toBeNull();
   });
@@ -79,5 +78,59 @@ describe('catálogo precargado de POCUS II', () => {
   it('el texto de validación usa el curso de la libreta', () => {
     const t = textoValidacion(config.textos.validacionFinal, 'POCUS III');
     expect(t).toBe('Ha completado satisfactoriamente las competencias prácticas del curso POCUS III.');
+  });
+});
+
+// Libreta en papel "LIBRETA DE COMPETENCIAS POCUS I.pdf" (ASARUC Sono Academy), transcripta con
+// los ajustes acordados: sin PROCEDIMIENTOS ECOGUIADOS (fila vacía en el original), sin la fila
+// "Competencia práctica" de ACCESOS VASCULARES (rótulo de plantilla), "VENA CAVA INFERIOS" → INFERIOR
+// y sin los puntos finales de dos ítems de RVP.
+const ORIGINAL_POCUS_I = `
+FÍSICA Y KNOBOLOGÍA: Cuidados del equipo; Knobología, transductores y comandos básicos; Uso del modo M; Uso de Doppler (color, pulsado, continuo y tisular)
+ULTRASONIDO PULMONAR: Exploración pulmonar con ultrasonido; Protocolo BLUE; Identificación de punto pulmonar; Cuantificación ecográfica de derrame pleural
+ABDOMEN / FAST: Protocolo FAST / FASTE; Evaluación de hígado; Evaluación de vesícula biliar; Evaluación de bazo; Evaluación de aorta abdominal con medición
+RENOVESICOPROSTÁTICO (RVP): Exploración ecográfica renal; Evaluación de corteza y parénquima renal; Evaluación de ecogenicidad cortical; Evaluación de vejiga (paredes y volumen); Verificación de posicionamiento de sonda vesical
+ACCESOS VASCULARES: Práctica de accesos vasculares ecoguiados en simuladores
+VENTANAS CARDÍACAS: Ventana paraesternal eje largo; Ventana paraesternal eje corto; Ventana apical 4 cámaras; Ventana apical 2 cámaras; Ventana subxifoidea
+FUNCIÓN SISTÓLICA: Valoración visual de función sistólica; Medición distancia E-septum; Cambio fraccional de área; MAPSE
+FUNCIÓN DIASTÓLICA: Relación E/e´; Cavidades derechas
+VENA CAVA INFERIOR: Medición de VCI; Evaluación de colapsabilidad / distensibilidad; Monitoreo hemodinámico
+TVP: Evaluación sistema femoral; Evaluación vena poplítea
+NEUROSONOLOGÍA: Doppler ACM (VPS / VM / VD); Índice de Lindegaard; Doppler carótida interna; DVNO
+`;
+
+describe('catálogo precargado de POCUS I', () => {
+  const pocusI = configuracionInicial().cursos.find((c) => c.id === 'pocus-i')!;
+
+  it('coincide con la libreta en papel (bloques, ítems y orden)', () => {
+    const real = pocusI.bloques.map((b) => ({ nombre: b.nombre, competencias: b.competencias.map((c) => c.nombre) }));
+    expect(real).toEqual(parsearOriginal(ORIGINAL_POCUS_I));
+  });
+
+  it('tiene 11 bloques y 39 competencias, con ids únicos y texto NFC', () => {
+    expect(pocusI.bloques).toHaveLength(11);
+    expect(contarCompetencias(pocusI.bloques)).toBe(39);
+    const ids = pocusI.bloques.flatMap((b) => [b.id, ...b.competencias.map((c) => c.id)]);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const b of pocusI.bloques) for (const c of b.competencias) expect(c.nombre).toBe(c.nombre.normalize('NFC'));
+  });
+});
+
+describe('cursos predefinidos en dispositivos que ya tenían la app', () => {
+  it('completa un POCUS I guardado sin competencias', () => {
+    const vieja = configuracionInicial();
+    vieja.cursos[0] = { ...vieja.cursos[0], nombre: 'POCUS I (2026)', bloques: [] };
+    const nueva = completarCursosPredefinidos(vieja);
+    expect(nueva.cursos[0].nombre).toBe('POCUS I (2026)');
+    expect(contarCompetencias(nueva.cursos[0].bloques)).toBe(39);
+  });
+
+  it('no pisa catálogos cargados ni recrea cursos eliminados', () => {
+    const cfg = configuracionInicial();
+    const propio = [{ id: 'b01', nombre: 'PROPIO', competencias: [{ id: 'b01-c01', nombre: 'x' }] }];
+    cfg.cursos = [{ ...cfg.cursos[0], bloques: propio }, cfg.cursos[2]];
+    const r = completarCursosPredefinidos(cfg);
+    expect(r).toBe(cfg);
+    expect(r.cursos.map((c) => c.id)).toEqual(['pocus-i', 'pocus-iii']);
   });
 });

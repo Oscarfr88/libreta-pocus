@@ -42,7 +42,7 @@ Todo se configura en **Ajustes** (ícono de engranaje en la pantalla de inicio).
 
 ### Cursos y competencias
 - Se pueden agregar, renombrar y eliminar cursos. Un curso **sin competencias cargadas** aparece deshabilitado y no permite crear libretas.
-- POCUS II trae su catálogo precargado. POCUS I y POCUS III se completan importando una planilla.
+- POCUS I y POCUS II traen su catálogo precargado (transcripto de las libretas en papel). POCUS III se completa importando una planilla.
 - **Formato de la planilla de competencias** (`.xlsx` o `.csv`): primera fila con los títulos **Bloque** y **Competencia**, y una fila por competencia, en el orden en que deben aparecer:
 
   | Bloque | Competencia |
@@ -89,7 +89,7 @@ npm run build
 ```
 
 - Stack: React 18 + TypeScript + Vite + Tailwind, `vite-plugin-pwa` (instalable y sin conexión), jsPDF + jspdf-autotable (PDF en el dispositivo) y SheetJS (planillas; se instala desde `cdn.sheetjs.com` porque el paquete `xlsx` de npm está desactualizado).
-- **Catálogo precargado de POCUS II**: `src/data/catalogo-pocus-ii.json`, editable. Los cursos y textos por defecto están en `src/data/configuracionInicial.ts`.
+- **Catálogos precargados**: `src/data/catalogo-pocus-i.json` y `src/data/catalogo-pocus-ii.json`, editables. Los cursos y textos por defecto están en `src/data/configuracionInicial.ts`. Si un dispositivo tiene guardado un curso predefinido sin competencias, al abrir la app se completa con el catálogo precargado (nunca se pisa uno ya cargado).
 - **Cantidad de prácticas por competencia**: constante `PRACTICAS_REQUERIDAS` en `src/config.ts` (hoy, 3). Cada libreta guarda la cantidad con la que se creó.
 - **PDF de muestra** para revisar el diseño: `PDF_SALIDA=/carpeta/de/salida npx vitest run scripts/muestras-pdf.test.ts`.
 - **Íconos**: se generan desde `src/assets/icon.svg` con `npm run icons`.

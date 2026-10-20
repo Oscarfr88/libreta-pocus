@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1590ad"/>
+      <stop offset="1" stop-color="#0b5a70"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#fondo)"/>
+  <!-- Libreta -->
+  <rect x="138" y="96" width="250" height="320" rx="28" fill="#ffffff"/>
+  <rect x="138" y="96" width="58" height="320" rx="28" fill="#d5ecf2"/>
+  <rect x="168" y="96" width="28" height="320" fill="#d5ecf2"/>
+  <g fill="#0b5a70">
+    <circle cx="167" cy="150" r="11"/>
+    <circle cx="167" cy="210" r="11"/>
+    <circle cx="167" cy="270" r="11"/>
+    <circle cx="167" cy="330" r="11"/>
+  </g>
+  <rect x="226" y="148" width="128" height="18" rx="9" fill="#cbd5e1"/>
+  <rect x="226" y="190" width="96" height="18" rx="9" fill="#cbd5e1"/>
+  <!-- Tilde de validación -->
+  <path d="M232 300 l42 42 l82 -96" fill="none" stroke="#15803d" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

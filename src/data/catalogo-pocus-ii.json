@@ -1,0 +1,175 @@
+{
+  "bloques": [
+    {
+      "nombre": "FÍSICA Y KNOBOLOGÍA",
+      "competencias": [
+        "Cuidados del equipo",
+        "Knobología, transductores y comandos básicos",
+        "Uso del modo M",
+        "Uso de Doppler (color, pulsado, continuo y tisular)"
+      ]
+    },
+    {
+      "nombre": "ULTRASONIDO PULMONAR",
+      "competencias": [
+        "Exploración pulmonar con ultrasonido",
+        "Protocolo BLUE",
+        "Identificación de punto pulmonar",
+        "Cálculo de LUS Score",
+        "Cuantificación ecográfica de derrame pleural"
+      ]
+    },
+    {
+      "nombre": "ABDOMEN / FAST",
+      "competencias": [
+        "Protocolo FAST / FASTE",
+        "Evaluación de hígado",
+        "Evaluación de vesícula biliar",
+        "Medición del diámetro de vía biliar",
+        "Evaluación de páncreas",
+        "Evaluación de bazo",
+        "Evaluación de pared intestinal",
+        "Evaluación de peristalsis",
+        "Evaluación de aorta abdominal con medición",
+        "Evaluación de vena porta"
+      ]
+    },
+    {
+      "nombre": "DIAFRAGMA",
+      "competencias": [
+        "Medición de excursión diafragmática",
+        "Medición de engrosamiento diafragmático"
+      ]
+    },
+    {
+      "nombre": "PROCEDIMIENTOS ECOGUIADOS",
+      "competencias": [
+        "Marcación ecográfica para toracocentesis",
+        "Marcación ecográfica para paracentesis",
+        "Identificación de arterias epigástricas previo a procedimientos"
+      ]
+    },
+    {
+      "nombre": "RENOVESICOPROSTÁTICO (RVP)",
+      "competencias": [
+        "Exploración ecográfica renal",
+        "Mediciones renales (longitudinal, lateral, anteroposterior)",
+        "Evaluación de corteza y parénquima renal",
+        "Evaluación de ecogenicidad cortical",
+        "Medición de índice de resistencia (IR)",
+        "Evaluación de vejiga (paredes y volumen)",
+        "Verificación de posicionamiento de sonda vesical"
+      ]
+    },
+    {
+      "nombre": "VENTANAS CARDÍACAS",
+      "competencias": [
+        "Ventana paraesternal eje largo",
+        "Ventana paraesternal eje corto",
+        "Ventana apical 4 cámaras",
+        "Ventana apical 2 cámaras",
+        "Ventana subxifoidea"
+      ]
+    },
+    {
+      "nombre": "ACCESOS VASCULARES",
+      "competencias": [
+        "Práctica de accesos vasculares ecoguiados en simuladores",
+        "Aplicación del protocolo RaCeVA",
+        "Aplicación del protocolo RaPeVA",
+        "Aplicación del protocolo RaFeVA"
+      ]
+    },
+    {
+      "nombre": "FUNCIÓN SISTÓLICA",
+      "competencias": [
+        "Valoración visual de función sistólica",
+        "Medición distancia E-septum",
+        "Cálculo FE por método Teicholz",
+        "Cálculo FE por método Simpson",
+        "Cambio fraccional de área",
+        "MAPSE"
+      ]
+    },
+    {
+      "nombre": "FUNCIÓN DIASTÓLICA",
+      "competencias": [
+        "Relación E/e´",
+        "Área de aurícula izquierda",
+        "Volumen de aurícula izquierda",
+        "Doppler de venas pulmonares"
+      ]
+    },
+    {
+      "nombre": "VENA CAVA INFERIOR",
+      "competencias": [
+        "Medición de VCI",
+        "Evaluación de colapsabilidad / distensibilidad"
+      ]
+    },
+    {
+      "nombre": "CAVIDADES DERECHAS",
+      "competencias": [
+        "TAPSE",
+        "Medición diámetro de ventrículo derecho",
+        "PSAP",
+        "Tiempo de aceleración de arteria pulmonar",
+        "Cambio fraccional de área de VD",
+        "Evaluación del tabique interventricular"
+      ]
+    },
+    {
+      "nombre": "MONITOREO HEMODINÁMICO",
+      "competencias": [
+        "Medición de VTI",
+        "Cálculo de volumen minuto",
+        "Acoplamiento ventrículo-arterial",
+        "Test de elevación pasiva de piernas con medición de VTI"
+      ]
+    },
+    {
+      "nombre": "DOPPLER VALVULAR",
+      "competencias": [
+        "Doppler válvula tricúspide",
+        "Doppler válvula aórtica",
+        "Doppler válvula mitral"
+      ]
+    },
+    {
+      "nombre": "ULTRASONOGRAFÍA DEL EJE VENOSO",
+      "competencias": [
+        "Evaluación venas superficiales (basílica y cefálica)",
+        "Evaluación venas profundas del brazo (humerales, axilar, subclavia)",
+        "Evaluación yugulares",
+        "Evaluación venas ilíacas",
+        "Evaluación sistema femoral",
+        "Evaluación vena poplítea"
+      ]
+    },
+    {
+      "nombre": "NEUROSONOLOGÍA",
+      "competencias": [
+        "Doppler ACM (VPS / VM / VD)",
+        "Doppler ACA",
+        "Doppler ACP",
+        "Doppler arteria basilar",
+        "Índice de Lindegaard",
+        "Doppler carótida interna",
+        "Índice vertebro-basilar",
+        "Doppler de arteria oftálmica",
+        "DVNO",
+        "Reactividad pupilar",
+        "Medición del tercer ventrículo"
+      ]
+    },
+    {
+      "nombre": "POCUS GINECO-OBSTÉTRICO",
+      "competencias": [
+        "Evaluación del embarazo temprano: confirmación, viabilidad y descarte inicial de ectópico",
+        "Evaluación urgente: FCF y presentación fetal",
+        "Valoración cualitativa de líquido amniótico",
+        "Identificación de anexos"
+      ]
+    }
+  ]
+}
